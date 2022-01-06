@@ -5,7 +5,11 @@
 </div>
 
 <main>
+    {{.TableOfContents}}
+
     {{ .Content }}
+
+    {{ partial "backlinks.html" . }}
 
     <script src="https://utteranc.es/client.js"
             repo="jahyun-dev/jahyun-dev.github.io"

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+        <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+        {{ partial "head_custom.html" . }}
+    </head>
+
+    {{ $data := newScratch }}
+    {{ range .Site.RegularPages }}
+    {{ $data.Add "tmp" (slice .RelPermalink) }}
+    {{ end }}
+
+    {{ $data.Get "tmp" | jsonify | $data.Set "tmp" }}
+
+    <script>
+     const data = {{ $data.Get "tmp" | safeJS }};
+     function toRandomPost() {
+         const current = window.location.href
+         const urls = data.filter(x => x !== window.location.href);
+         const selected = urls[Math.floor(Math.random() * urls.length)];
+         location.href = selected;
+     }
+    </script>
+
+    <body>
+        <nav>
+            <ul class="menu">
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                {{ end }}
+                <li onclick="toRandomPost()"><a href="javascript:;">Random</a></li>
+            </ul>
+            <hr/>
+        </nav>
