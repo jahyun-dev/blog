@@ -6,7 +6,7 @@ git add .
 git commit -m "Update"
 git push origin main
 
-cd blog
+cd public
 git add .
 git commit -m "Update"
 git push origin main
