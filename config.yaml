@@ -1,0 +1,21 @@
+baseURL: "https://jahyun-dev.github.io/"
+languageCode: "ko-KR"
+title: "DEV-LOG"
+theme: "xmin"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Tags
+      url: "/tags"
+      weight: 2
+    - name: Notes
+      url: "/notes"
+      weight: 3
+    - name: Blogs
+      url: "/blogs"
+      weight: 4
+
+
