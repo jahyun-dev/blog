@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+    <h3><span class="title">{{ .Title | markdownify }}</span></h3>
+    {{ if (gt .Params.date 0) }}<p class="date">{{ .Date.Format "2006/01/02" }}</p>{{ end }}
+</div>
+
+<main>
+    {{ .Content }}
+
+    <script src="https://utteranc.es/client.js"
+            repo="jahyun-dev/jahyun-dev.github.io"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+</main>
+
+{{ partial "footer.html" . }}
