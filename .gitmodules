@@ -4,4 +4,4 @@
 
 [submodule "public"]
 	path = public
-	url = git@github.com:jahyun-dev/jahyun-dev.github.io.git
+	url = git@jahyun-dev.github.com:jahyun-dev/jahyun-dev.github.io.git
