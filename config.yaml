@@ -2,6 +2,7 @@ baseURL: "https://jahyun-dev.github.io/"
 languageCode: "ko-KR"
 title: "DEV-LOG"
 theme: "xmin"
+googleAnalytics: G-YX2EV7XMXK
 
 menu:
   main:
